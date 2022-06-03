@@ -19,7 +19,7 @@ composer require enishant/magiccurl:1.*
 
 - If you are not using composer, download the latest release from [the releases section](https://github.com/enishant/magiccurl/releases).
     **You should download the `magiccurl.zip` file**.
-    After that, include `MagicCurl.php` in your application and you can use the API as usual.
+    After that, include `MagicCurl.php` in your application and you can use the MagicCurl methods by creating it's instance.
 
 Note: This PHP library follows the following practices:
 
