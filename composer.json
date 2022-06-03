@@ -1,0 +1,28 @@
+{
+    "name": "enishant/magiccurl",
+    "type": "library",
+    "description": "MagicCurl PHP Library",
+    "version": "1.0.0",
+    "homepage": "https://github.com/enishant/magiccurl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nishant Vaity",
+            "email": "enishant@gmail.com",
+            "homepage": "https://www.nishantvaity.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~5.5.0|~5.6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Enishant\\MagicCurl\\": "src"
+        }
+    },
+    "keywords": ["magiccurl", "curl", "request", "requests", "get request", "post request", "response", "responses"],
+    "config": {
+        "lock": false
+    }
+}
