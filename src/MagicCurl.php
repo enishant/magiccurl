@@ -1,6 +1,8 @@
 <?php
 namespace Enishant\MagicCurl;
 
+use Exception;
+
 class MagicCurl
 {
 	/**
@@ -34,10 +36,22 @@ class MagicCurl
 	protected $create_log;
 
 	/**
+	* Log Path.
+	* @var bool
+	*/
+	protected $log_path;
+
+	/**
 	* User Agent.
 	* @var string
 	*/
 	protected $user_agent;
+
+	/**
+	* App Name.
+	* @var string
+	*/
+	CONST APP_NAME = 'MagicCurl';
 
 	/**
 	* App Version.
@@ -47,10 +61,11 @@ class MagicCurl
 
 	public function __construct($options = [])
 	{
-		$this->app_name    = str_replace('\\', '_', get_class($this));
+		$this->app_name    = self::APP_NAME;
 		$this->app_version = self::APP_VERSION;
 		$this->create_log  = false;
 		$this->user_agent  = '';
+		$this->log_path    = '';
 
 		if(isset($options) && !empty($options) && is_array($options))
 		{
@@ -69,6 +84,11 @@ class MagicCurl
 			if(isset($options['user_agent']) && !empty($options['user_agent']) && is_string($options['user_agent']))
 			{
 				$this->user_agent = $options['user_agent'];
+			}
+
+			if(isset($options['log_path']) && !empty($options['log_path']) && is_string($options['log_path']))
+			{
+				$this->log_path = $options['log_path'];
 			}
 		}
 	}
@@ -165,20 +185,32 @@ class MagicCurl
 	}
 
 	private function log($context = '',$data = '') {
-		if($this->create_log && !empty($data))
+		if($this->create_log && !empty($this->log_path) && !empty($data))
 		{
-			$fp = fopen(__DIR__ . '/magiccurl_' . $this->app_version . '.log', 'a');//opens file in append mode  
-			fwrite($fp, date('d m Y H:i:s') . ' :: ' . strtoupper($context) . ' :: ');
-			if(is_string($data))
+			try
 			{
-				fwrite($fp, $data);
-			}
-			else if(is_array($data))
+				if (!file_exists($this->log_path))
+				{
+					throw new Exception('Log file not found.');
+				}
+
+				$fp = fopen($this->log_path, 'a');//opens file in append mode
+
+				fwrite($fp, date('d m Y H:i:s') . ' :: ' . strtoupper($context) . ' :: ');
+				if(is_string($data))
+				{
+					fwrite($fp, $data);
+				}
+				else if(is_array($data))
+				{
+					fwrite($fp, json_encode($data));
+				}
+				fwrite($fp, "\n");
+				fclose($fp);
+			} catch ( Exception $e )
 			{
-				fwrite($fp, json_encode($data));
+				// Exception while handling log
 			}
-			fwrite($fp, "\n");
-			fclose($fp); 
 		}
 	}
 
@@ -211,3 +243,4 @@ class MagicCurl
 	}
 }
 ?>
+
