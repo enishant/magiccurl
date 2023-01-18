@@ -69,14 +69,15 @@ The resources can be accessed via the `$client` object. All the methods invocati
     
     //Example - Request with GET method
     $client->get($url);
-    
+    $client->get($url, $payload, $headers);
+
     //Example - Request with POST method
     $headers = [
-      'X-CUSTOM-HEADER-ONE: Value 1',
-      'X-CUSTOM-HEADER-TWO: Value 2',
+      'Accept: application/json',
+      'Content-Type: application/json',
     ];
     $payload = ['data'=>'in array'];
-    $client->post($url, $headers, $payload);
+    $client->post($url, $payload, $headers);
 ```
 
 ## License

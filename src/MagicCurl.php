@@ -93,7 +93,7 @@ class MagicCurl
 		}
 	}
 
-	public function get($url = '', $headers = [], $payload = [])
+	public function get($url = '', $payload = [], $headers = [])
 	{
 		$this->method  = 'GET';
 		$this->url     = $url;
@@ -103,7 +103,7 @@ class MagicCurl
 		return $this->request($this->method, $this->url, $this->payload, $this->headers);
 	}
 
-	public function post($url = '', $headers = [], $payload = [])
+	public function post($url = '', $payload = [], $headers = [])
 	{
 		$this->method  = 'POST';
 		$this->url     = $url;
@@ -113,7 +113,7 @@ class MagicCurl
 		return $this->request($this->method, $this->url, $this->payload, $this->headers);
 	}
 
-	public function request($method = 'GET', $url = '', $headers = [], $payload = [])
+	public function request($method = 'GET', $url = '', $payload = [], $headers = [])
 	{
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
