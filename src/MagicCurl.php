@@ -145,6 +145,8 @@ class MagicCurl
 				$this->log($this->app_name . ' Request', $payload);
 
 				curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+			} else if(empty($payload) === false && $this->is_json($payload)) {
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 			}
 		}
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
