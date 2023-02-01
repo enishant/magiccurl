@@ -1,7 +1,7 @@
 # MagicCurl PHP Library
 
 [![Stable](https://poser.pugx.org/enishant/magiccurl/v)](https://packagist.org/packages/enishant/magiccurl)
-[![PHP Version Require](http://poser.pugx.org/phpunit/phpunit/require/php)](https://packagist.org/packages/enishant/magiccurl)
+[![PHP Version Require](http://poser.pugx.org/enishant/magiccurl/require/php)](https://packagist.org/packages/enishant/magiccurl)
 [![License](https://poser.pugx.org/enishant/magiccurl/license)](https://packagist.org/packages/enishant/magiccurl)
 [![Downloads](https://poser.pugx.org/enishant/magiccurl/downloads)](https://packagist.org/packages/enishant/magiccurl)
 
