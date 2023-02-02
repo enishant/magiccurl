@@ -6,7 +6,7 @@
 [![Downloads](https://poser.pugx.org/enishant/magiccurl/downloads)](https://packagist.org/packages/enishant/magiccurl)
 
 ### Prerequisites
-- A minimum of PHP 7.* upto 8.1
+- A minimum of PHP 7.x upto 8.1
 - PHP cURL extension
 
 ## Installation
