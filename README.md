@@ -13,8 +13,8 @@
 
 -   If your project using composer, run the below command
 
-```
-composer require enishant/magiccurl:1.*
+```php
+composer require enishant/magiccurl:1.0
 ```
 
 - If you are not using composer, download the latest release from [the releases section](https://github.com/enishant/magiccurl/releases).
