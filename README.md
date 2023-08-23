@@ -79,8 +79,8 @@ The resources can be accessed via the `$client` object. All the methods invocati
     $payload = ['data'=>'in array'];
     $client->post($url, $payload, $headers);
 ```
+## Contributing
+All contributions for enhancement and fixes will be accepted through pull request, you can also contribute by reporting issues, [Click here](https://github.com/enishant/magiccurl/issues/new) to report an issue.
 
 ## License
-
 The MagicCurl PHP Library is released under the MIT License. See [LICENSE](LICENSE) file for more details.
-
